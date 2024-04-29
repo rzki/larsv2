@@ -70,6 +70,7 @@
                                 <button type="submit" class="main-btn primary-btn btn-hover w-100 text-center">
                                     {{ __('Login') }}
                                 </button>
+                                <a href="{{ route('register') }}" class="main-btn secondary-btn btn-hover w-100 text-center mt-2">{{ __('Register') }}</a>
                             </div>
                         </div>
                     </div>

@@ -30,10 +30,10 @@ return new class extends Migration
             $table->string('notelp_direktur')->nullable();
             $table->string('divisi_direktur')->nullable();
             $table->text('alamat');
-            $table->foreignId('prov')->nullable()->constrained('idn_provinces', 'id', 'prov')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('kab')->nullable()->constrained('idn_regencies', 'id', 'kab')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('kec')->nullable()->constrained('idn_districts', 'id', 'kec')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('kel')->nullable()->constrained('idn_villages', 'id', 'kel')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('prov_id')->nullable()->constrained('idn_provinces', 'id', 'prov_id')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('kab_id')->nullable()->constrained('idn_regencies', 'id', 'kab_id')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('kec_id')->nullable()->constrained('idn_districts', 'id', 'kec_id')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('kel_id')->nullable()->constrained('idn_villages', 'id', 'kel_id')->cascadeOnDelete()->cascadeOnUpdate();
             $table->integer('kode_pos')->nullable();
             $table->timestamps();
         });
