@@ -13,6 +13,18 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->uuid('userId');
+            $table->foreignId('role_id')->constrained('roles', 'id', 'role_id')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->integer('no_induk');
+            $table->integer('nik');
+            $table->string('jabatan', 50);
+            $table->text('alamat');
+            $table->foreignId('prov')->nullable()->constrained('idn_provinces', 'id', 'prov')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('kab')->nullable()->constrained('idn_regencies', 'id', 'kab')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('kec')->nullable()->constrained('idn_districts', 'id', 'kec')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('kel')->nullable()->constrained('idn_villages', 'id', 'kel')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->integer('kode_pos')->nullable();
+            $table->string('status', 20);
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
