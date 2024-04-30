@@ -1,6 +1,6 @@
 <ul>
     <li class="nav-item @if(request()->routeIs('home')) active @endif">
-        <a href="{{ route('home') }}">
+        <a href="{{ route('home') }}" wire:navigate>
               <span class="icon">
                 <i class="mdi mdi-view-dashboard"></i>
               </span>
@@ -18,7 +18,7 @@
         </a>
         <ul id="users" class="dropdown-nav collapse" style="">
             <li>
-                <a href="{{ route('users.index') }}">All User</a>
+                <a href="{{ route('users.index') }}" wire:navigate>All User</a>
             </li>
             <li>
                 <a href="#">Surveyor</a>
