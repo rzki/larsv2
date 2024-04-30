@@ -16,7 +16,7 @@
     <div class="card-styles">
         <div class="card-style-3 mb-30">
             <div class="card-content">
-                <form wire:submit="createUser">
+                <form wire:submit="create">
                     <div class="form-group mb-3">
                         <label for="name" class="form-label text-black fw-bold">Name</label>
                         <input type="text" wire:model='name' class="form-control @error('name') is-invalid @enderror" name="name">

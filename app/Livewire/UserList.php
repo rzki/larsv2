@@ -10,7 +10,15 @@ class UserList extends Component
     public $users;
 
     public function mount(){
-        $this->users = User::all();
+        $d = $this->users = User::all();
+        // dd($d);
+    }
+
+    public function delete(User $user)
+    {
+        $s = $user->where('userId', $user->userId)->delete();
+        return $this->redirectRoute('users.index', navigate:true);
+        // dd($s);
     }
     public function render()
     {

@@ -20,7 +20,7 @@
         <div class="card-style-3 mb-30">
             <div class="card-content">
                 <div class="table-wrapper table-responsive">
-                    <table class="table striped-table">
+                    <table class="table striped-table text-black">
                         <thead>
                             <tr>
                                 <th>
@@ -29,6 +29,9 @@
                                 <th>
                                     <h6>Email</h6>
                                 </th>
+                                <th>
+                                    <h6>Action</h6>
+                                </th>
                             </tr>
                             <!-- end table row-->
                         </thead>
@@ -36,10 +39,14 @@
                             @foreach($users as $user)
                             <tr>
                                 <td>
-                                    <p>{{ $user->name }}</p>
+                                    <p class=" text-black">{{ $user->name }}</p>
                                 </td>
                                 <td>
-                                    <p>{{ $user->email }}</p>
+                                    <p class=" text-black">{{ $user->email }}</p>
+                                </td>
+                                <td>
+                                    <a href="{{ route('users.edit', $user->userId) }}" class="btn btn-primary mr-2"><i class="mdi mdi-square-edit-outline"></i> Edit</a>
+                                    <button class="btn btn-danger" wire:click="delete('{{ $user->userId }}')" wire:confirm='Are you sure want to delete this user?'><i class="mdi mdi-trash-can"></i> Delete</button>
                                 </td>
                             </tr>
                             @endforeach

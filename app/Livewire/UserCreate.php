@@ -12,7 +12,7 @@ class UserCreate extends Component
     public $email = '';
     public $password = '';
 
-    public function createUser(){
+    public function create(){
         $this->validate([
             'name' => 'required',
             'email' => 'required',
