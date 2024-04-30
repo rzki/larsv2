@@ -27,7 +27,15 @@ class UserCreate extends Component
             'password' => $this->password
         ]);
 
-        return $this->redirectRoute('users.index', navigate:true);
+        // $this->dispatch('alert-success',
+        //     type: 'success',
+        //     title: 'User added successfully!',
+        //     position: 'center',
+        //     timer: 2500);
+
+        session()->flash('success', 'User registered successfully!');
+
+        return $this->redirectRoute('users.index');
     }
     public function render()
     {

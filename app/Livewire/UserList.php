@@ -4,6 +4,8 @@ namespace App\Livewire;
 
 use App\Models\User;
 use Livewire\Component;
+use Livewire\Attributes\On;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class UserList extends Component
 {
@@ -11,7 +13,6 @@ class UserList extends Component
 
     public function mount(){
         $d = $this->users = User::all();
-        // dd($d);
     }
 
     public function delete(User $user)
@@ -20,6 +21,7 @@ class UserList extends Component
         return $this->redirectRoute('users.index', navigate:true);
         // dd($s);
     }
+
     public function render()
     {
         return view('livewire.user-list',[
