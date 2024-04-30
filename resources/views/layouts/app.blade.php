@@ -90,32 +90,6 @@
         <!-- end container -->
     </section>
     <!-- ========== section end ========== -->
-
-    <!-- ========== footer start =========== -->
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 order-last order-md-first">
-                    <div class="copyright text-md-start">
-                        <p class="text-sm">
-                            Designed and Developed by
-                            <a
-                                    href="https://plainadmin.com"
-                                    rel="nofollow"
-                                    target="_blank"
-                            >
-                                PlainAdmin
-                            </a>
-                        </p>
-                    </div>
-                </div>
-                <!-- end col-->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
-    </footer>
-    <!-- ========== footer end =========== -->
 </main>
 <!-- ======== main-wrapper end =========== -->
 
