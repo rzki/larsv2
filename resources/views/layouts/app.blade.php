@@ -7,7 +7,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- ========== All CSS files linkup ========= -->
-    <link rel="stylesheet" href="{{ asset('css/lineicons.css') }}"/>
+    {{-- <link rel="stylesheet" href="{{ asset('css/lineicons.css') }}"/> --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
     @vite('resources/sass/app.scss')
 </head>
@@ -35,11 +35,8 @@
                 <div class="col-lg-5 col-md-5 col-6">
                     <div class="header-left d-flex align-items-center">
                         <div class="menu-toggle-btn mr-20">
-                            <button
-                                id="menu-toggle"
-                                class="main-btn primary-btn btn-hover"
-                            >
-                                <i class="lni lni-chevron-left me-2"></i> {{ __('Menu') }}
+                            <button id="menu-toggle" class="main-btn primary-btn btn-hover">
+                                <i class="mdi mdi-menu me-2"></i> {{ __('Menu') }}
                             </button>
                         </div>
                     </div>
@@ -48,13 +45,7 @@
                     <div class="header-right">
                         <!-- profile start -->
                         <div class="profile-box ml-15">
-                            <button
-                                    class="dropdown-toggle bg-transparent border-0"
-                                    type="button"
-                                    id="profile"
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded="false"
-                            >
+                            <button class="dropdown-toggle bg-transparent border-0" type="button" id="profile" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="profile-info">
                                     <div class="info">
                                         <h6>{{ Auth::user()->name }}</h6>
@@ -64,7 +55,7 @@
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
                                 <li>
-                                        <a href="{{ route('profile.show') }}"> <i class="lni lni-user"></i> {{ __('My profile') }}</a>
+                                    <a href="{{ route('profile.show') }}"> <i class="lni lni-user"></i> {{ __('My profile') }}</a>
                                 </li>
                                 <li>
                                     <form method="POST" action="{{ route('logout') }}">
