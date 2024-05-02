@@ -8,9 +8,7 @@ use Illuminate\Support\Str;
 
 class UserCreate extends Component
 {
-    public $name = '';
-    public $email = '';
-    public $password = '';
+    public $name, $email, $password;
 
     public function create(){
         $this->validate([

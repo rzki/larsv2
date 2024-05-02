@@ -7,13 +7,11 @@ use Livewire\Component;
 
 class UserEdit extends Component
 {
-    public $user;
-    public $userId;
-    public $name;
-    public $email;
+    public $user, $userId, $name, $email;
+
     public function mount($userId)
     {
-        $d = $this->user = User::where('userId', $userId)->first();
+        $this->user = User::where('userId', $userId)->first();
         $this->name = $this->user->name;
         $this->email = $this->user->email;
     }
