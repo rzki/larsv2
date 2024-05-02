@@ -22,13 +22,14 @@ return new class extends Migration
             $table->integer('no_induk')->nullable();
             $table->integer('nik')->nullable();
             $table->string('jabatan', 50)->nullable();
+            $table->string('dinas')->nullable();
             $table->text('alamat')->nullable();
             $table->foreignId('prov')->nullable()->constrained('idn_provinces', 'id', 'prov')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('kab')->nullable()->constrained('idn_regencies', 'id', 'kab')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('kec')->nullable()->constrained('idn_districts', 'id', 'kec')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('kel')->nullable()->constrained('idn_villages', 'id', 'kel')->cascadeOnDelete()->cascadeOnUpdate();
             $table->integer('kode_pos')->nullable();
-            $table->string('status', 20);
+            $table->string('status', 20)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
