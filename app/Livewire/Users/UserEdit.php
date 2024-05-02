@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Users;
 
 use App\Models\User;
 use Livewire\Component;
@@ -11,13 +11,11 @@ class UserEdit extends Component
     public $userId;
     public $name;
     public $email;
-    public $password;
     public function mount($userId)
     {
         $d = $this->user = User::where('userId', $userId)->first();
         $this->name = $this->user->name;
         $this->email = $this->user->email;
-        $this->password = $this->user->password;
     }
     public function update()
     {
@@ -31,12 +29,20 @@ class UserEdit extends Component
             'email' => $this->email
         ]);
 
+        session()->flash('alert', [
+            'type' => 'success',
+            'title' => 'User updated successfully!',
+            'toast'=> true,
+            'position'=> 'top-end',
+            'timer'=> 2500,
+            'progbar' => true,
+            'showConfirmButton'=> false
+        ]);
+
         return $this->redirectRoute('users.index', navigate:true);
     }
     public function render()
     {
-        return view('livewire.user-edit', [
-            'user' => $this->user
-        ]);
+        return view('livewire.users.edit');
     }
 }

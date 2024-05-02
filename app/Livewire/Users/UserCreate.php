@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Users;
 
 use App\Models\User;
 use Livewire\Component;
@@ -27,18 +27,20 @@ class UserCreate extends Component
             'password' => $this->password
         ]);
 
-        // $this->dispatch('alert-success',
-        //     type: 'success',
-        //     title: 'User added successfully!',
-        //     position: 'center',
-        //     timer: 2500);
-
-        session()->flash('success', 'User registered successfully!');
+        session()->flash('alert', [
+            'type' => 'success',
+            'title' => 'User registered successfully!',
+            'toast'=> true,
+            'position'=> 'top-end',
+            'timer'=> 2500,
+            'progbar' => true,
+            'showConfirmButton'=> false
+        ]);
 
         return $this->redirectRoute('users.index');
     }
     public function render()
     {
-        return view('livewire.user-create');
+        return view('livewire.users.create');
     }
 }
