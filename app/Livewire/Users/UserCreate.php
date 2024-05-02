@@ -37,7 +37,7 @@ class UserCreate extends Component
             'showConfirmButton'=> false
         ]);
 
-        return $this->redirectRoute('users.index');
+        return $this->redirectRoute('users.index', navigate:true);
     }
     public function render()
     {

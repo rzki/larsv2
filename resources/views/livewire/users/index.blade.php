@@ -46,7 +46,7 @@
                                     <p class=" text-black">{{ $user->email }}</p>
                                 </td>
                                 <td>
-                                    <a href="{{ route('users.edit', $user->userId) }}" class="btn btn-primary mr-2"><i
+                                    <a href="{{ route('users.edit', $user->userId) }}" wire:navigate class="btn btn-primary mr-2"><i
                                             class="mdi mdi-square-edit-outline"></i> Edit</a>
                                     <button class="btn btn-danger" wire:click.prevent="deleteConfirm('{{ $user->userId }}')"><i
                                             class="mdi mdi-trash-can"></i> Delete</button>
@@ -57,8 +57,9 @@
                         </tbody>
                     </table>
                     <!-- end table -->
-
-                    {{-- {{ $users->links() }} --}}
+                    <div class="paginate">
+                        {{ $users->links() }}
+                    </div>
                 </div>
 
             </div>

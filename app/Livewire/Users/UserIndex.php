@@ -6,16 +6,15 @@ use App\Models\User;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\Attributes\On;
+use Livewire\WithPagination;
 
 class UserIndex extends Component
 {
-    public $users;
+    use WithPagination;
+    public $perPage = 5;
     public $userId;
     protected $listeners = ['deleteConfirmed' => 'delete'];
 
-    public function mount(){
-        $d = $this->users = User::all();
-    }
     public function deleteConfirm($userId){
         $this->userId = $userId;
         $this->dispatch('delete-confirmation');
@@ -39,7 +38,7 @@ class UserIndex extends Component
     public function render()
     {
         return view('livewire.users.index',[
-            'users' => $this->users
+            'users' => User::paginate($this->perPage)
         ]);
     }
 }
