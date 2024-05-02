@@ -54,7 +54,7 @@
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
                                         <li>
-                                            <a href="{{ route('profile.show') }}"> <i class="lni lni-user"></i> {{ __('My
+                                            <a href="{{ route('profile.show') }}" wire:navigate> <i class="mdi mdi-account"></i> {{ __('My
                                                 profile') }}</a>
                                         </li>
                                         <li>
@@ -62,7 +62,7 @@
                                                 @csrf
                                                 <a href="{{ route('logout') }}"
                                                     onclick="event.preventDefault(); this.closest('form').submit();"> <i
-                                                        class="lni lni-exit"></i> {{ __('Logout') }}</a>
+                                                        class="mdi mdi-logout"></i> {{ __('Logout') }}</a>
                                             </form>
                                         </li>
                                     </ul>
