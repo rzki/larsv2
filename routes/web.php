@@ -1,27 +1,47 @@
 <?php
 
 use App\Livewire\Home;
-use App\Livewire\Users\UserCreate;
+use App\Livewire\MyProfile;
+use App\Livewire\Auth\Login;
+use App\Livewire\Roles\RoleEdit;
+use App\Livewire\Users\Surveyor;
 use App\Livewire\Users\UserEdit;
+use App\Livewire\Roles\RoleIndex;
 use App\Livewire\Users\UserIndex;
+use App\Livewire\Roles\RoleCreate;
+use App\Livewire\Users\UserCreate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Users\Surveyor\SurveyorEdit;
+use App\Livewire\Users\Surveyor\SurveyorIndex;
+use App\Livewire\Users\Surveyor\SurveyorCreate;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('auth.login');
+// });
 
+Route::get('/', Login::class)->name('login');
 Auth::routes();
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/home', Home::class)->name('home');
-    Route::view('about', 'about')->name('about');
+    Route::get('/dashboard', Home::class)->name('home');
 
+    // Users
     Route::get('users', UserIndex::class)->name('users.index');
     Route::get('users/create', UserCreate::class)->name('users.create');
     Route::get('users/edit/{userId}', UserEdit::class)->name('users.edit');
 
-    Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
-    Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+    // Surveyors
+    Route::get('users/surveyors', SurveyorIndex::class)->name('surveyors.index');
+    Route::get('users/surveyors/create', SurveyorCreate::class)->name('surveyors.create');
+    Route::get('users/surveyors/edit/{surveyorId}', SurveyorEdit::class)->name('surveyors.edit');
+
+    // Roles
+    Route::get('roles', RoleIndex::class)->name('roles.index');
+    Route::get('roles/create', RoleCreate::class)->name('roles.create');
+    Route::get('roles/edit/{roleId}', RoleEdit::class)->name('roles.edit');
+
+    Route::get('profile', MyProfile::class)->name('profile.show');
+    Route::put('profile', MyProfile::class)->name('profile.update');
 });
