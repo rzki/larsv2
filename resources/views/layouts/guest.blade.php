@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>{{ config('app.name', 'Laravel') }}</title>
     @vite('resources/sass/app.scss')
+    <style>
+        .auth-cover-wrapper{
+            background: linear-gradient(-15deg, #1469c3, #021B34);
+        }
+    </style>
 </head>
 <body>
 
