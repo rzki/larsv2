@@ -11,10 +11,18 @@ use Livewire\WithPagination;
 class UserIndex extends Component
 {
     use WithPagination;
+    public $search, $userId;
+    public $sortBy='created_at', $sortDir='ASC';
     public $perPage = 5;
-    public $userId;
     protected $listeners = ['deleteConfirmed' => 'delete'];
-
+    public function sort($sortByField)
+    {
+        if($this->sortBy === $sortByField){
+            $this->sortDir = ($this->sortDir == "ASC") ? 'DESC' : 'ASC';
+            return;
+        }
+        $this->sortBy = $sortByField;
+    }
     public function deleteConfirm($userId){
         $this->userId = $userId;
         $this->dispatch('delete-confirmation');
@@ -38,7 +46,9 @@ class UserIndex extends Component
     public function render()
     {
         return view('livewire.users.index',[
-            'users' => User::paginate($this->perPage)
+            'users' => User::search($this->search)
+            ->orderBy($this->sortBy,$this->sortDir)
+            ->paginate($this->perPage)
         ]);
     }
 }
