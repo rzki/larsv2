@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Users\Surveyor;
+namespace App\Livewire\Users\Surveyors;
 
 use App\Models\User;
 use Livewire\Component;

@@ -4,7 +4,6 @@ use App\Livewire\Home;
 use App\Livewire\MyProfile;
 use App\Livewire\Auth\Login;
 use App\Livewire\Roles\RoleEdit;
-use App\Livewire\Users\Surveyor;
 use App\Livewire\Users\UserEdit;
 use App\Livewire\Roles\RoleIndex;
 use App\Livewire\Users\UserIndex;
@@ -12,9 +11,9 @@ use App\Livewire\Roles\RoleCreate;
 use App\Livewire\Users\UserCreate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Livewire\Users\Surveyor\SurveyorEdit;
-use App\Livewire\Users\Surveyor\SurveyorIndex;
-use App\Livewire\Users\Surveyor\SurveyorCreate;
+use App\Livewire\Users\Surveyors\SurveyorEdit;
+use App\Livewire\Users\Surveyors\SurveyorIndex;
+use App\Livewire\Users\Surveyors\SurveyorCreate;
 
 // Route::get('/', function () {
 //     return view('auth.login');
