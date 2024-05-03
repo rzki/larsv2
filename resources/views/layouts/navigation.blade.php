@@ -21,9 +21,17 @@
                 <a href="{{ route('users.index') }}" wire:navigate>All User</a>
             </li>
             <li>
-                <a href="#">Surveyor</a>
+                <a href="{{ route('surveyors.index') }}" wire:navigate>Surveyor</a>
             </li>
         </ul>
+    </li>
+    <li class="nav-item @if(request()->routeIs('roles.index')) active @endif">
+        <a href="{{ route('roles.index') }}" wire:navigate>
+            <span class="icon">
+                <i class="mdi mdi-account-cog"></i>
+            </span>
+            <span class="text">{{ __('Roles') }}</span>
+        </a>
     </li>
     <li class="nav-item nav-item-has-children">
         <a class="collapsed" href="#0" class="" data-bs-toggle="collapse" data-bs-target="#hospitals"
