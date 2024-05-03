@@ -4,21 +4,18 @@
     <div class="col-lg-6">
         <div class="auth-cover-wrapper bg-primary-100">
             <div class="auth-cover">
-                <div class="title text-center">
-                    <h1 class="text-primary mb-10">{{ __('Login') }}</h1>
+                <div class="cover-image text-center">
+                    <img src="{{ asset('images/logo/logo_lars.png') }}" style="width: 15em; height: 15em" alt="">
                 </div>
-                <div class="cover-image">
-                    <img src="{{ asset('images/auth/signin-image.svg') }}" alt="">
-                </div>
-                <div class="shape-image">
+                {{-- <div class="shape-image">
                     <img src="{{ asset('images/auth/shape.svg') }}" alt="">
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
     <!-- end col -->
     <div class="col-lg-6">
-        <div class="signin-wrapper">
+        <div class="signin-wrapper min-vh-100">
             <div class="form-wrapper">
                 <h6 class="mb-15">{{ __('Login') }}</h6>
                 <form action="{{ route('login') }}" method="POST">
@@ -57,20 +54,20 @@
                             </div>
                         </div>
                         <!-- end col -->
-                        @if (Route::has('password.request'))
+                        {{-- @if (Route::has('password.request'))
                             <div class="col-xxl-6 col-lg-12 col-md-6">
                                 <div class="text-start text-md-end text-lg-start text-xxl-end mb-30">
                                     <a href="{{ route('password.request') }}">{{ __('Forgot Your Password?') }}</a>
                                 </div>
                             </div>
-                        @endif
+                        @endif --}}
                     <!-- end col -->
                         <div class="col-12">
                             <div class="button-group d-flex justify-content-center flex-wrap">
                                 <button type="submit" class="main-btn primary-btn btn-hover w-100 text-center">
                                     {{ __('Login') }}
                                 </button>
-                                <a href="{{ route('register') }}" class="main-btn secondary-btn btn-hover w-100 text-center mt-2">{{ __('Register') }}</a>
+                                {{-- <a href="{{ route('register') }}" class="main-btn secondary-btn btn-hover w-100 text-center mt-2">{{ __('Register') }}</a> --}}
                             </div>
                         </div>
                     </div>

@@ -26,7 +26,7 @@ return new class extends Migration
             $table->text('alamat')->nullable();
             $table->foreignId('prov')->nullable()->constrained('idn_provinces', 'id', 'prov')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('kab')->nullable()->constrained('idn_regencies', 'id', 'kab')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('kec')->nullable()->constrained('idn_districts', 'id', 'kec')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('kec')->nullable()->constrained   ('idn_districts', 'id', 'kec')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('kel')->nullable()->constrained('idn_villages', 'id', 'kel')->cascadeOnDelete()->cascadeOnUpdate();
             $table->integer('kode_pos')->nullable();
             $table->string('status', 20)->nullable();
