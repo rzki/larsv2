@@ -8,7 +8,7 @@
         </a>
     </li>
 
-    <li class="nav-item nav-item-has-children @if(request()->routeIs('users.index')) active @endif">
+    <li class="nav-item nav-item-has-children @if(request()->routeIs('users.index') or request()->routeIs('surveyors.index')) active @endif">
         <a class="collapsed" href="#0" class="" data-bs-toggle="collapse" data-bs-target="#users"
             aria-controls="users" aria-expanded="true" aria-label="Toggle navigation">
             <span class="icon">
@@ -33,7 +33,15 @@
             <span class="text">{{ __('Roles') }}</span>
         </a>
     </li>
-    <li class="nav-item nav-item-has-children">
+    <li class="nav-item @if(request()->routeIs('hospitals.index')) active @endif">
+        <a href="{{ route('hospitals.index') }}" wire:navigate>
+            <span class="icon">
+                <i class="mdi mdi-hospital-box"></i>
+            </span>
+            <span class="text">{{ __('Hospitals') }}</span>
+        </a>
+    </li>
+    {{-- <li class="nav-item nav-item-has-children">
         <a class="collapsed" href="#0" class="" data-bs-toggle="collapse" data-bs-target="#hospitals"
            aria-controls="hospitals" aria-expanded="true" aria-label="Toggle navigation">
             <span class="icon">
@@ -46,5 +54,5 @@
                 <a href="#">Child menu</a>
             </li>
         </ul>
-    </li>
+    </li> --}}
 </ul>
