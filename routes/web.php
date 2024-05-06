@@ -3,6 +3,7 @@
 use App\Livewire\Home;
 use App\Livewire\MyProfile;
 use App\Livewire\Auth\Login;
+use App\Livewire\Hospitals\HospitalCreate;
 use App\Livewire\Hospitals\HospitalIndex;
 use App\Livewire\Roles\RoleEdit;
 use App\Livewire\Users\UserEdit;
@@ -44,6 +45,8 @@ Route::middleware('auth')->group(function () {
 
     // Hospitals
     Route::get('hospitals', HospitalIndex::class)->name('hospitals.index');
+    Route::get('hospitals/create', HospitalCreate::class)->name('hospitals.create');
+    Route::get('hospitals/edit/{hospitalId}', HospitalIndex::class)->name('hospitals.edit');
 
     Route::get('profile', MyProfile::class)->name('profile.show');
     Route::put('profile', MyProfile::class)->name('profile.update');

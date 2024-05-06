@@ -21,21 +21,30 @@ return new class extends Migration
         Schema::create('idn_provinces', function(Blueprint $table){
             $table->id();
             $table->string('name');
+            $table->string('code');
         });
         Schema::create('idn_regencies', function(Blueprint $table){
             $table->id();
-            $table->foreignId('province_id')->constrained('idn_provinces', 'id', 'province_id')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('name');
+            $table->string('code');
+            $table->string('full_code');
+            $table->foreignId('provinsi_id')->constrained('idn_provinces', 'id', 'provinsi_id')->cascadeOnDelete()->cascadeOnUpdate();
         });
         Schema::create('idn_districts', function(Blueprint $table){
             $table->id();
-            $table->foreignId('regency_id')->constrained('idn_regencies', 'id', 'regency_id')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('name');
+            $table->string('code');
+            $table->string('full_code');
+            $table->foreignId('kabupaten_id')->constrained('idn_regencies', 'id', 'kabupaten_id')->cascadeOnDelete()->cascadeOnUpdate();
+
         });
         Schema::create('idn_villages', function(Blueprint $table){
             $table->id();
-            $table->foreignId('district_id')->constrained('idn_districts', 'id', 'district_id')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('name');
+            $table->string('code');
+            $table->string('full_code');
+            $table->string('pos_code');
+            $table->foreignId('kecamatan_id')->constrained('idn_districts', 'id', 'kecamatan_id')->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 

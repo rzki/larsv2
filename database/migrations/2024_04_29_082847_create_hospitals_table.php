@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('hospitals', function (Blueprint $table) {
             $table->id();
+            $table->uuid('hospitalId');
             $table->string('no_induk')->unique();
             $table->string('nama');
             $table->string('jenis');
@@ -35,6 +36,7 @@ return new class extends Migration
             $table->foreignId('kec_id')->nullable()->constrained('idn_districts', 'id', 'kec_id')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('kel_id')->nullable()->constrained('idn_villages', 'id', 'kel_id')->cascadeOnDelete()->cascadeOnUpdate();
             $table->integer('kode_pos')->nullable();
+            $table->string('img')->nullable();
             $table->timestamps();
         });
     }
