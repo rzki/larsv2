@@ -30,10 +30,10 @@
             <div class="card-content">
                 <div class="table-wrapper table-responsive">
                     <table class="table table-responsive striped-table text-black">
-                        <thead class="text-center">
+                        <thead>
                             <tr>
                                 <th scope="col" wire:click="sort('created_at')">
-                                    <button class="d-flex align-items-center fw-bold btn" style="">
+                                    <button class="d-flex align-items-center fw-bold btn text-center" style="">
                                         {{__('Tanggal')}}
                                         @if ($sortBy !== 'created_at')
                                         <span class="mdi mdi-unfold-more-horizontal"></span>
@@ -45,7 +45,7 @@
                                     </button>
                                 </th>
                                 <th scope="col" wire:click="sort('nama')">
-                                    <button class="d-flex align-items-center fw-bold btn" style="">
+                                    <button class="d-flex align-items-center fw-bold btn text-center" style="">
                                         {{__('Nama')}}
                                         @if ($sortBy !== 'nama')
                                         <span class="mdi mdi-unfold-more-horizontal"></span>
@@ -57,7 +57,7 @@
                                     </button>
                                 </th>
                                 <th scope="col" wire:click="sort('no_induk')">
-                                    <button class="d-flex align-items-center fw-bold btn" style="">
+                                    <button class="d-flex align-items-center fw-bold btn text-center" style="">
                                         {{__('No Induk')}}
                                         @if ($sortBy !== 'no_induk')
                                         <span class="mdi mdi-unfold-more-horizontal"></span>
@@ -68,10 +68,10 @@
                                         @endif
                                     </button>
                                 </th>
-                                <th scope="col">{{__('Lokasi')}}</th>
-                                <th scope="col">{{__('Kelas')}}</th>
-                                <th scope="col">{{__('Status')}}</th>
-                                <th scope="col">{{__('')}}</th>
+                                <th scope="col" class=" text-center">{{__('Lokasi')}}</th>
+                                <th scope="col" class=" text-center">{{__('Kelas')}}</th>
+                                <th scope="col" class=" text-center">{{__('Status')}}</th>
+                                <th scope="col" class=" text-center">{{__('')}}</th>
                             </tr>
                             <!-- end table row-->
                         </thead>
@@ -84,6 +84,13 @@
                             </tr>
                             @else
                                 @foreach ($hospitals as $hospital)
+                                <tr class="text-center">
+                                    <td>{{ $hospital->created_at }}</td>
+                                    <td>{{ $hospital->nama }}</td>
+                                    <td>{{ $hospital->no_induk }}</td>
+                                    <td>{{ $hospital->kabupaten->name }}</td>
+                                    <td>{{ $hospital->kelas }}</td>
+                                </tr>
                                 @endforeach
                             @endif
                             <!-- end table row -->

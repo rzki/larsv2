@@ -28,6 +28,7 @@ class RoleCreate extends Component
             'toast'=> true,
             'position'=> 'top-end',
             'timer'=> 2500,
+            'progbar' => true,
             'showConfirmButton'=> false
         ]);
 

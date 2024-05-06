@@ -60,8 +60,15 @@
                             </div>
                             {{-- Kelas Rumah Sakit --}}
                             <div class="form-group mb-3">
-                                <label for="kelas" class="form-label text-black fw-bold text-capitalize">{{ __('kelas rumah sakit') }}</label>
-                                <input type="text" wire:model='kelas' class="form-control @error('kelas') is-invalid @enderror" name="kelas">
+                                <label for="kelas" class="form-label text-black fw-bold text-capitalize">{{ __('kelas') }}</label>
+                                {{-- <input type="text"  class="form-control @error('kelas') is-invalid @enderror" name="kelas"> --}}
+                                <select name="kelas" id="kelas" class="form-control @error('kelas') is-invalid @enderror" wire:model='kelas'>
+                                    <option value="">Pilih salah satu</option>
+                                    <option value="Kelas A">Kelas A</option>
+                                    <option value="Kelas B">Kelas B</option>
+                                    <option value="Kelas C">Kelas C</option>
+                                    <option value="Kelas D">Kelas D</option>
+                                </select>
                                 @error('kelas')
                                 <div class="alert alert-danger mt-2">{{ __($message) }}</div>
                                 @enderror
@@ -77,7 +84,7 @@
                             {{-- No Telp Rumah Sakit --}}
                             <div class="form-group mb-3">
                                 <label for="no_telp" class="form-label text-black fw-bold text-capitalize">{{ __('no telepon rumah sakit') }}</label>
-                                <input type="text" wire:model='no_telp' class="form-control @error('no_telp') is-invalid @enderror" name="no_telp">
+                                <input type="tel" wire:model='no_telp' class="form-control @error('no_telp') is-invalid @enderror" name="no_telp">
                                 @error('no_telp')
                                 <div class="alert alert-danger mt-2">{{ __($message) }}</div>
                                 @enderror
@@ -109,7 +116,7 @@
                             {{-- Masa Berlaku --}}
                             <div class="form-group mb-3">
                                 <label for="masa_berlaku" class="form-label text-black fw-bold text-capitalize">{{ __('berlaku sampai') }}</label>
-                                <input type="text" wire:model='masa_berlaku' class="form-control @error('masa_berlaku') is-invalid @enderror" name="masa_berlaku">
+                                <input type="date" wire:model='masa_berlaku' class="form-control @error('masa_berlaku') is-invalid @enderror" name="masa_berlaku">
                                 @error('masa_berlaku')
                                 <div class="alert alert-danger mt-2">{{ __($message) }}</div>
                                 @enderror
@@ -135,8 +142,11 @@
                             {{-- Provinsi --}}
                             <div class="form-group mb-3">
                                 <label for="prov_id" class="form-label text-black fw-bold text-capitalize">{{ __('provinsi') }}</label>
-                                <select name="prov_id" id="prov_id" class="form-control @error('prov_id') is-invalid @enderror">
+                                <select name="prov_id" id="prov_id" class="form-control @error('prov_id') is-invalid @enderror" wire:model.live='prov_id'>
                                     <option value="">Pilih salah satu</option>
+                                    @foreach ($provinsi as $prov)
+                                        <option value="{{ $prov->id }}">{{ $prov->name }}</option>
+                                    @endforeach
                                 </select>
                                 @error('prov_id')
                                 <div class="alert alert-danger mt-2">{{ __($message) }}</div>
@@ -145,8 +155,11 @@
                             {{-- Kabupaten --}}
                             <div class="form-group mb-3">
                                 <label for="kab_id" class="form-label text-black fw-bold text-capitalize">{{ __('kabupaten') }}</label>
-                                <select name="kab_id" id="kab_id" class="form-control @error('kab_id') is-invalid @enderror">
+                                <select name="kab_id" id="kab_id" class="form-control @error('kab_id') is-invalid @enderror" wire:model.live='kab_id'>
                                     <option value="">Pilih salah satu</option>
+                                    @foreach ($kabupaten as $kab)
+                                        <option value="{{ $kab->id }}">{{ $kab->name }}</option>
+                                    @endforeach
                                 </select>
                                 @error('kab_id')
                                 <div class="alert alert-danger mt-2">{{ __($message) }}</div>
@@ -155,8 +168,11 @@
                             {{-- Kecamatan --}}
                             <div class="form-group mb-3">
                                 <label for="kec_id" class="form-label text-black fw-bold text-capitalize">{{ __('kecamatan') }}</label>
-                                <select name="kec_id" id="kec_id" class="form-control @error('kec_id') is-invalid @enderror">
+                                <select name="kec_id" id="kec_id" class="form-control @error('kec_id') is-invalid @enderror" wire:model.live='kec_id'>
                                     <option value="">Pilih salah satu</option>
+                                    @foreach ($kecamatan as $kec)
+                                        <option value="{{ $kec->id }}">{{ $kec->name }}</option>
+                                    @endforeach
                                 </select>
                                 @error('kec_id')
                                 <div class="alert alert-danger mt-2">{{ __($message) }}</div>
@@ -164,9 +180,12 @@
                             </div>
                             {{-- Kelurahan --}}
                             <div class="form-group mb-3">
-                                <label for="kel_id" class="form-label text-black fw-bold text-capitalize">{{ __('kabupaten') }}</label>
-                                <select name="kel_id" id="kel_id" class="form-control @error('kel_id') is-invalid @enderror">
+                                <label for="kel_id" class="form-label text-black fw-bold text-capitalize">{{ __('kelurahan/desa') }}</label>
+                                <select name="kel_id" id="kel_id" class="form-control @error('kel_id') is-invalid @enderror" wire:model.live='kel_id'>
                                     <option value="">Pilih salah satu</option>
+                                    @foreach ($kelurahan as $kel)
+                                        <option value="{{ $kel->id }}">{{ $kel->name }}</option>
+                                    @endforeach
                                 </select>
                                 @error('kel_id')
                                 <div class="alert alert-danger mt-2">{{ __($message) }}</div>
@@ -174,7 +193,7 @@
                             </div>
                             {{-- Kode Pos --}}
                             <div class="form-group mb-3">
-                                <label for="kode_pos" class="form-label text-black fw-bold text-capitalize">{{ __('kode pos rumah sakit') }}</label>
+                                <label for="kode_pos" class="form-label text-black fw-bold text-capitalize">{{ __('kode pos') }}</label>
                                 <input type="text" wire:model='kode_pos' class="form-control @error('kode_pos') is-invalid @enderror" name="kode_pos">
                                 @error('kode_pos')
                                 <div class="alert alert-danger mt-2">{{ __($message) }}</div>
@@ -199,7 +218,7 @@
                             {{-- Nomor Telepon Direktur --}}
                             <div class="form-group mb-3">
                                 <label for="notelp_direktur" class="form-label text-black fw-bold text-capitalize">{{ __('nomor telp direktur') }}</label>
-                                <input type="text" wire:model='notelp_direktur' class="form-control @error('notelp_direktur') is-invalid @enderror" name="notelp_direktur">
+                                <input type="tel" wire:model='notelp_direktur' class="form-control @error('notelp_direktur') is-invalid @enderror" name="notelp_direktur">
                                 @error('notelp_direktur')
                                 <div class="alert alert-danger mt-2">{{ __($message) }}</div>
                                 @enderror

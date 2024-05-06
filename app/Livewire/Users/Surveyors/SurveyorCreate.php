@@ -53,6 +53,7 @@ class SurveyorCreate extends Component
             'toast'=> true,
             'position'=> 'top-end',
             'timer'=> 3000,
+            'progbar' => true,
             'showConfirmButton'=> false
         ]);
 

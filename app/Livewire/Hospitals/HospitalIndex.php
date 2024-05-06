@@ -31,7 +31,7 @@ class HospitalIndex extends Component
 
         session()->flash('alert', [
             'type' => 'success',
-            'title' => 'Rumah Sakit berhasil dihapus!',
+            'title' => 'Data Rumah Sakit berhasil dihapus!',
             'toast'=> true,
             'position'=> 'top-end',
             'timer'=> 2500,
