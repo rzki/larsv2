@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('no_induk')->nullable();
-            $table->integer('nik')->nullable();
+            $table->string('nik')->nullable();
             $table->string('jabatan', 50)->nullable();
             $table->string('dinas')->nullable();
             $table->text('alamat')->nullable();

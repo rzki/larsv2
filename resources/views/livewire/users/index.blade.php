@@ -109,8 +109,8 @@
     <script>
         window.addEventListener('delete-confirmation', event => {
             Swal.fire({
-                title: "Are you sure?",
-                text: "User will be deleted!",
+                title: "Apakah anda yakin?",
+                text: "Data pengguna ini akan terhapus!",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",

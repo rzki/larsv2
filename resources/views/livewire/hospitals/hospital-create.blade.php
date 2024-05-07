@@ -121,20 +121,12 @@
                                 <div class="alert alert-danger mt-2">{{ __($message) }}</div>
                                 @enderror
                             </div>
-                            {{-- Status --}}
-                            <div class="form-group mb-3">
-                                <label for="acc_status" class="form-label text-black fw-bold text-capitalize">{{ __('status') }}</label>
-                                <input type="text" wire:model='acc_status' class="form-control @error('acc_status') is-invalid @enderror" name="acc_status">
-                                @error('acc_status')
-                                <div class="alert alert-danger mt-2">{{ __($message) }}</div>
-                                @enderror
-                            </div>
                         </div>
                         <div class="col-lg-6">
                             {{-- Alamat Lengkap --}}
                             <div class="form-group mb-3">
                                 <label for="alamat" class="form-label text-black fw-bold text-capitalize">{{ __('alamat') }}</label>
-                                <textarea class="form-control @error('alamat') is-invalid @enderror" name="alamat" cols="30" rows="5" wire:model='alamat'></textarea>
+                                <input type="text" class="form-control @error('alamat') is-invalid @enderror" name="alamat" cols="30" rows="5" wire:model='alamat'>
                                 @error('alamat')
                                 <div class="alert alert-danger mt-2">{{ __($message) }}</div>
                                 @enderror
@@ -239,6 +231,20 @@
                                 <div class="alert alert-danger mt-2">{{ __($message) }}</div>
                                 @enderror
                             </div>
+                        </div>
+                        {{-- Status --}}
+                        <div class="form-group mb-3">
+                            <label for="acc_status" class="form-label text-black fw-bold text-capitalize">{{ __('status') }}</label>
+                            {{-- <input type="text" class="form-control @error('acc_status') is-invalid @enderror" name="acc_status"> --}}
+                            <select name="acc_status" id="acc_status" class="form-control @error('acc_status') is-invalid @enderror"
+                                wire:model='acc_status'>
+                                <option value="">Pilih salah satu</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Approved">Approved</option>
+                            </select>
+                            @error('acc_status')
+                            <div class="alert alert-danger mt-2">{{ __($message) }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="d-grid">

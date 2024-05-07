@@ -33,7 +33,7 @@
                         <thead>
                             <tr>
                                 <th scope="col" wire:click="sort('created_at')">
-                                    <button class="d-flex align-items-center fw-bold btn text-center" style="">
+                                    <button class="d-flex align-items-center justify-content-center w-100 fw-bold btn text-center" style="">
                                         {{__('Tanggal')}}
                                         @if ($sortBy !== 'created_at')
                                         <span class="mdi mdi-unfold-more-horizontal"></span>
@@ -45,7 +45,7 @@
                                     </button>
                                 </th>
                                 <th scope="col" wire:click="sort('nama')">
-                                    <button class="d-flex align-items-center fw-bold btn text-center" style="">
+                                    <button class="d-flex align-items-center justify-content-center w-100 fw-bold btn text-center" style="">
                                         {{__('Nama')}}
                                         @if ($sortBy !== 'nama')
                                         <span class="mdi mdi-unfold-more-horizontal"></span>
@@ -57,7 +57,7 @@
                                     </button>
                                 </th>
                                 <th scope="col" wire:click="sort('no_induk')">
-                                    <button class="d-flex align-items-center fw-bold btn text-center" style="">
+                                    <button class="d-flex align-items-center justify-content-center w-100 fw-bold btn text-center" style="">
                                         {{__('No Induk')}}
                                         @if ($sortBy !== 'no_induk')
                                         <span class="mdi mdi-unfold-more-horizontal"></span>
@@ -77,20 +77,29 @@
                         </thead>
                         <tbody>
                             @if ($hospitals->isEmpty())
-                            <tr>
-                                <td colspan="7" class="text-center">
-                                    {{ __('Data tidak ditemukan') }}
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td colspan="7" class="text-center">
+                                        {{ __('Data tidak ditemukan') }}
+                                    </td>
+                                </tr>
                             @else
                                 @foreach ($hospitals as $hospital)
-                                <tr class="text-center">
-                                    <td>{{ $hospital->created_at }}</td>
-                                    <td>{{ $hospital->nama }}</td>
-                                    <td>{{ $hospital->no_induk }}</td>
-                                    <td>{{ $hospital->kabupaten->name }}</td>
-                                    <td>{{ $hospital->kelas }}</td>
-                                </tr>
+                                    <tr class="text-center">
+                                        <td>{{ date('d-m-Y', strtotime($hospital->created_at)) }}</td>
+                                        <td>{{ $hospital->nama }}</td>
+                                        <td>{{ $hospital->no_induk }}</td>
+                                        <td>{{ $hospital->kabupaten->name }}</td>
+                                        <td>{{ $hospital->kelas }}</td>
+                                        @if($hospital->acc_status == 'Pending')
+                                            <td><p class="badge rounded-pill bg-danger text-white">{{ $hospital->acc_status }}</p></td>
+                                        @elseif($hospital->acc_status == 'Approved')
+                                            <td><p class="badge rounded-pill bg-success text-white">{{ $hospital->acc_status }}</p></td>
+                                        @endif
+                                        <td>
+                                            <a href="{{ route('hospitals.edit', $hospital->hospitalId) }}" wire:navigate class="btn btn-primary mr-2"><i class="mdi mdi-square-edit-outline"></i> Edit</a>
+                                            <button class="btn btn-danger" wire:click.prevent="deleteConfirm('{{ $hospital->hospitalId }}')"><i class="mdi mdi-trash-can"></i> Delete</button>
+                                        </td>
+                                    </tr>
                                 @endforeach
                             @endif
                             <!-- end table row -->
@@ -105,7 +114,7 @@
                                 <option value="10">10</option>
                                 <option value="25">25</option>
                                 <option value="50">50</option>
-                                <option value="50">100</option>
+                                <option value="100">100</option>
                             </select>
                         </div>
                         @if (!$hospitals->isEmpty())
@@ -124,8 +133,8 @@
 <script>
     window.addEventListener('delete-confirmation', event => {
             Swal.fire({
-                title: "Are you sure?",
-                text: "This Hospital will be deleted!",
+                title: "Apakah anda yakin?",
+                text: "Data rumah sakit ini akan terhapus!",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",

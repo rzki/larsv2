@@ -8,8 +8,16 @@ use Livewire\Component;
 class SurveyorIndex extends Component
 {
     public $surveyorId;
+    public $search, $sortBy='created_at', $sortDir='ASC', $perPage=5;
     protected $listeners = ['deleteConfirmed' => 'delete'];
-
+    public function sort($sortByField)
+    {
+        if($this->sortBy === $sortByField){
+            $this->sortDir = ($this->sortDir == "ASC") ? 'DESC' : 'ASC';
+            return;
+        }
+        $this->sortBy = $sortByField;
+    }
     public function deleteConfirm($surveyorId){
         $this->surveyorId = $surveyorId;
         $this->dispatch('delete-confirmation');
@@ -32,7 +40,12 @@ class SurveyorIndex extends Component
     }
     public function render()
     {
-        $surveyors = User::where('role_id', '=', 2)->get();
-        return view('livewire.users.surveyor.surveyor-index', compact('surveyors'));
+        // $surveyors = User::where('role_id', '=', 2)->get();
+        return view('livewire.users.surveyor.surveyor-index', [
+            'surveyors' => User::where('role_id', '=', 2)
+            ->search($this->search)
+            ->orderBy($this->sortBy,$this->sortDir)
+            ->paginate($this->perPage)
+        ]);
     }
 }

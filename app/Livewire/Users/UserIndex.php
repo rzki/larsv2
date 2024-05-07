@@ -3,9 +3,7 @@
 namespace App\Livewire\Users;
 
 use App\Models\User;
-use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
-use Livewire\Attributes\On;
 use Livewire\WithPagination;
 
 class UserIndex extends Component
