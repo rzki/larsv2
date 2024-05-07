@@ -19,13 +19,58 @@
 
     <div class="card-styles">
         <div class="card-style-3 mb-30">
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="d-flex mb-3">
+                        <button class="btn btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#filterDropdown"
+                            aria-expanded="false" aria-controls="filterDropdown">
+                            Filter
+                        </button>
+                    </div>
+                    <div class="collapse" id="filterDropdown">
+                        <div class="card card-body border-0">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="text-center status-filter me-3">
+                                        <label for="filterStatus" class="form-label text-black fw-500">{{ __('Status') }}</label>
+                                        <select wire:model.live='filterStatus' name="filterStatus" id="filterStatus" class="form-control w-100">
+                                            <option value="">Semua</option>
+                                            <option value="Pending">Pending</option>
+                                            <option value="Approved">Approved</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="text-center kelas-filter">
+                                        <label for="filterKelas" class="form-label text-black fw-500">{{ __('Kelas') }}</label>
+                                        <select wire:model.live='filterKelas' name="filterKelas" id="filterKelas" class="form-control w-100">
+                                            <option value="">Semua</option>
+                                            <option value="Kelas A">Kelas A</option>
+                                            <option value="Kelas B">Kelas B</option>
+                                            <option value="Kelas C">Kelas C</option>
+                                            <option value="Kelas D">Kelas D</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+
+                                </div>
+                                <div class="col-lg-3">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {{-- Sort & Search --}}
             <div class="row">
                 <div class="col-lg-6">
                     <input wire:model.live.debounce.250ms='search' type="text" name="search" id="search"
                         class="form-control mb-3 w-25" placeholder="Search...">
                 </div>
-                <div class="col-lg-6"></div>
+                <div class="col-lg-6">
+                </div>
             </div>
             <div class="card-content">
                 <div class="table-wrapper table-responsive">
@@ -96,6 +141,7 @@
                                             <td><p class="badge rounded-pill bg-success text-white">{{ $hospital->acc_status }}</p></td>
                                         @endif
                                         <td>
+                                            <a href="{{ route('hospitals.show', $hospital->hospitalId) }}" wire:navigate class="btn btn-info mr-2"><i class="mdi mdi-eye"></i> View</a>
                                             <a href="{{ route('hospitals.edit', $hospital->hospitalId) }}" wire:navigate class="btn btn-primary mr-2"><i class="mdi mdi-square-edit-outline"></i> Edit</a>
                                             <button class="btn btn-danger" wire:click.prevent="deleteConfirm('{{ $hospital->hospitalId }}')"><i class="mdi mdi-trash-can"></i> Delete</button>
                                         </td>

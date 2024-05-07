@@ -11,6 +11,7 @@ class HospitalIndex extends Component
     use WithPagination;
     public $hospitalId, $tglUpload, $nama, $noInduk, $lokasi, $kelas, $status;
     public $search, $sortBy='created_at', $sortDir='ASC', $perPage=5;
+    public $filterStatus='', $filterKelas='';
     protected $listeners = ['deleteConfirmed' => 'delete'];
     public function sort($sortByField)
     {
@@ -44,6 +45,12 @@ class HospitalIndex extends Component
     {
         return view('livewire.hospitals.hospital-index',[
             'hospitals' => Hospital::search($this->search)
+            ->when($this->filterKelas !== '', function($query){
+                $query->where('kelas', $this->filterKelas);
+            })
+            ->when($this->filterStatus !== '', function($query){
+                $query->where('acc_status', $this->filterStatus);
+            })
             ->orderBy($this->sortBy,$this->sortDir)
             ->paginate($this->perPage)
         ]);

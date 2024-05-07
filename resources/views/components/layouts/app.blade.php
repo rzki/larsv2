@@ -25,9 +25,9 @@
         <!-- ======== sidebar-nav end =========== -->
 
         <!-- ======== main-wrapper start =========== -->
-        <main class="main-wrapper">
+        <main class="main-wrapper pb-0">
             <!-- ========== header start ========== -->
-            <header class="header">
+            <header class="header py-3">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-5 col-md-5 col-6">
