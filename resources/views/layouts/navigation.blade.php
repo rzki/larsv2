@@ -15,6 +15,14 @@
             <span class="text">{{ __('Rumah Sakit') }}</span>
         </a>
     </li>
+    <li class="nav-item @if(request()->routeIs('accreditations.index')) active @endif">
+        <a href="{{ route('accreditations.index') }}" wire:navigate>
+            <span class="icon">
+                <i class="mdi mdi-clipboard-edit"></i>
+            </span>
+            <span class="text">{{ __('Akreditasi') }}</span>
+        </a>
+    </li>
     <li class="nav-item nav-item-has-children @if(request()->routeIs('users.index') or request()->routeIs('surveyors.index')) active @endif">
         <a class="collapsed" href="#0" class="" data-bs-toggle="collapse" data-bs-target="#users"
             aria-controls="users" aria-expanded="true" aria-label="Toggle navigation">

@@ -13,8 +13,9 @@
         <!-- ======== sidebar-nav start =========== -->
         <aside class="sidebar-nav-wrapper">
             <div class="navbar-logo">
-                <a href="{{ route('home') }}">
-                    <img src="{{ asset('images/logo/logo.svg') }}" alt="logo" />
+                <a href="{{ route('home') }}" class="site-logo d-flex justify-content-center align-items-center">
+                    <img src="{{ asset('images/logo/logo_lars.png') }}" class="w-25 me-2" alt="logo" />
+                    <span class="text-black fw-600 fs-4 mt-1"> LARS</span>
                 </a>
             </div>
             <nav class="sidebar-nav">
