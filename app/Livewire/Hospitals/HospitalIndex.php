@@ -9,7 +9,7 @@ use Livewire\WithPagination;
 class HospitalIndex extends Component
 {
     use WithPagination;
-    public $hospitalId, $tglUpload, $nama, $noInduk, $lokasi, $kelas, $status;
+    public $hospitalId;
     public $search, $sortBy='created_at', $sortDir='ASC', $perPage=5;
     public $filterStatus='', $filterKelas='';
     protected $listeners = ['deleteConfirmed' => 'delete'];
