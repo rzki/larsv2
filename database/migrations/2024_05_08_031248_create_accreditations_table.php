@@ -34,6 +34,7 @@ return new class extends Migration
             $table->id();
             $table->uuid('babId');
             $table->string('nama');
+            $table->string('kode');
             $table->timestamps();
         });
         Schema::create('acc_standards', function (Blueprint $table) {
