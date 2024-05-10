@@ -22,8 +22,7 @@
             <div class="row mb-3">
                 <div class="col">
                     <div class="d-flex mb-3">
-                        <button class="btn btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#filterDropdown"
-                            aria-expanded="false" aria-controls="filterDropdown">
+                        <button class="btn btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#filterDropdown" aria-expanded="false" aria-controls="filterDropdown">
                             Filter
                         </button>
                     </div>
