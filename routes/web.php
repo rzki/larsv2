@@ -1,5 +1,8 @@
 <?php
 
+use App\Livewire\Accreditation\AccreditationCreate;
+use App\Livewire\Accreditation\AccreditationIndex;
+use App\Livewire\Accreditation\AccreditationShow;
 use App\Livewire\Home;
 use App\Livewire\MyProfile;
 use App\Livewire\Auth\Login;
@@ -50,6 +53,11 @@ Route::middleware('auth')->group(function () {
     Route::get('hospitals/create', HospitalCreate::class)->name('hospitals.create');
     Route::get('hospitals/edit/{hospitalId}', HospitalEdit::class)->name('hospitals.edit');
     Route::get('hospitals/detail/{hospitalId}', HospitalShow::class)->name('hospitals.show');
+
+    // Akreditasi
+    Route::get('accreditations', AccreditationIndex::class)->name('accreditations.index');
+    Route::get('accreditations/create', AccreditationCreate::class)->name('accreditations.create');
+    Route::get('accreditations/detail/{acc_id}', AccreditationShow::class)->name('accreditations.show');
 
     Route::get('profile', MyProfile::class)->name('profile.show');
     Route::put('profile', MyProfile::class)->name('profile.update');

@@ -35,4 +35,8 @@ class Hospital extends Model
     {
         return $this->belongsTo(Kelurahan::class, 'kel_id');
     }
+    public function akreditasi()
+    {
+        return $this->hasMany(Accreditation::class);
+    }
 }

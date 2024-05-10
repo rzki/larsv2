@@ -19,5 +19,10 @@ class RoleSeeder extends Seeder
             'name' => 'Admin',
             'code' => strtolower('Admin')
         ]);
+        Role::create([
+            'roleId' => Str::orderedUuid(),
+            'name' => 'Surveyor',
+            'code' => strtolower('Surveyor')
+        ]);
     }
 }
