@@ -13,6 +13,15 @@
                     <h2>{{ __('Detail Rumah Sakit') }}</h2>
                 </div>
             </div>
+            <div class="col-md-6 d-flex justify-content-end align-items-start">
+                <div class="title mb-30">
+                    @if ($hospitals->acc_status == 'Approved')
+                        <p class="fs-6 px-3 py-2 text-white bg-success-700 border rounded">Registrasi Rumah Sakit telah di <b>approved</b></p>
+                    @elseif($hospitals->acc_status == 'Pending')
+                        <p class="fs-6 px-3 py-2 text-white bg-danger-700 border rounded">Data rumah sakit belum lengkap</p>
+                    @endif
+                </div>
+            </div>
             <!-- end col -->
         </div>
         <!-- end row -->
@@ -24,17 +33,17 @@
             <div x-data="{ currentTab: 1 }">
                 <div class="row mb-3">
                     <div class="d-flex justify-content-center text-center">
-                        <div class="col-lg-4" :class="{ 'bg-primary rounded-2': currentTab === 1 }">
-                            <button href="#" class="btn fw-600 text-center"
+                        <div class="col-lg-4 d-grid" :class="{ 'bg-primary rounded-2': currentTab === 1 }">
+                            <button href="#" class="btn btn-block fw-600 text-center"
                                 :class="{ 'text-white': currentTab === 1 }"
                                 x-on:click.prevent="currentTab = 1">{{ __('Profil') }}</button>
                         </div>
-                        <div class="col-lg-4" :class="{ 'bg-primary rounded-2': currentTab === 2 }">
+                        <div class="col-lg-4 d-grid" :class="{ 'bg-primary rounded-2': currentTab === 2 }">
                             <button href="#" class="btn fw-600 text-center"
                                 :class="{ 'text-white': currentTab === 2 }"
                                 x-on:click.prevent="currentTab = 2">{{ __('Alamat') }}</button>
                         </div>
-                        <div class="col-lg-4" :class="{ 'bg-primary rounded-2': currentTab === 3 }">
+                        <div class="col-lg-4 d-grid" :class="{ 'bg-primary rounded-2': currentTab === 3 }">
                             <button href="#" class="btn fw-600 text-center"
                                 :class="{ 'text-white': currentTab === 3 }"x-on:click.prevent="currentTab = 3">{{ __('Direktur') }}</button>
                         </div>
