@@ -28,6 +28,7 @@ class RoleIndex extends Component
             'progbar' => true,
             'showConfirmButton'=> false
         ]);
+        
         return $this->redirectRoute('roles.index', navigate:true);
     }
     public function render()

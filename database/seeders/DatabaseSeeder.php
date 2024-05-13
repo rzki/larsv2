@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             AdminSeeder::class,
             WilayahSeeder::class,
-            AkreditasiBabSeeder::class
+            AkreditasiSeeder::class
         ]);
     }
 }

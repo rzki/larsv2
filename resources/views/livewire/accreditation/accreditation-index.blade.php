@@ -112,7 +112,6 @@
                                         @endif
                                         <td>
                                             <a href="{{ route('accreditations.show', $acc->acc_id) }}" wire:navigate class="btn btn-info mr-2"><i class="mdi mdi-eye"></i> View</a>
-                                            {{-- <a href="{{ route('accreditations.edit', $acc->accId) }}" wire:navigate class="btn btn-primary mr-2"><i class="mdi mdi-square-edit-outline"></i>  Edit</a> --}}
                                             <button class="btn btn-danger" wire:click.prevent="deleteConfirm('{{ $acc->acc_id }}')"><i class="mdi mdi-trash-can"></i> Delete</button>
                                         </td>
                                     </tr>

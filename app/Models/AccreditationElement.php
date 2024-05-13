@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AccreditationBab extends Model
+class AccreditationElement extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
-    protected $table = 'acc_bab';
+    protected $table = 'acc_elements';
     public function getRouteKeyName()
     {
-        return 'babId';
+        return 'elementId';
     }
-    public function standards()
+    public function standard()
     {
-        return $this->hasMany(AccreditationStandard::class, 'acc_standard_id');
+        return $this->belongsTo(AccreditationStandard::class, 'acc_standard_id');
     }
 }
