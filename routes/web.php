@@ -31,7 +31,8 @@ use App\Livewire\Public\HomeIndex;
 //     return view('auth.login');
 // });
 
-Route::get('/', HomeIndex::class)->name('login');
+Route::get('/', HomeIndex::class)->name('home');
+Route::get('/signin', Login::class)->name('signin');
 Auth::routes();
 
 

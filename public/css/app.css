@@ -1,0 +1,53 @@
+/* Small Mobile Device (576px and below) */
+    .logo-lars{
+        width: 3em;
+    }
+    .container-fluid.navigation{
+        padding: 0 10%
+    }
+    .main{
+        margin-top: 102px;
+    }
+    .min-vh-50{
+        min-height: 50vh;
+    }
+    .icon{
+        font-size: 6em;
+    }
+    .daftar-akreditasi,.cek-permohonan{
+        padding-bottom: 4em;
+        text-align: center;
+    }
+    /* Daftar Akreditasi */
+    .daftar-akreditasi:hover{
+        background-color: #980900;
+        color:#fef;
+        transition: 0.25s;
+        border-radius: 5px;
+    }
+    .mdi-file-document{
+        color: #980900;
+    }
+    .daftar-akreditasi:hover .mdi-file-document{
+        color:#fef;
+    }
+    /* Cek Permohonan */
+    .cek-permohonan:hover{
+        background-color: #E51900;
+        color:#fef;
+        transition: 0.25s;
+        border-radius: 5px;
+    }
+    .cek-permohonan:hover h3.card-title{
+        color:#fef;
+    }
+    .mdi-magnify{
+        color:#E51900;
+    }
+    .cek-permohonan:hover .mdi-magnify{
+        color:#fef;
+    }
+
+    .akreditasi-text{
+        color: #980900;
+    }
