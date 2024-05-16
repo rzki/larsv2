@@ -25,8 +25,8 @@
         <div class="row min-vh-10 p-4 bg-black">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-3 mb-md-3 mb-lg-0 text-center">
-                    <p class="text-white mb-md-1">Developed by</p>
-                    <p class="text-white m-0">Theme by <a href="https://getbootstrap.com" class="text-decoration-none fw-bold text-white" target="__blank">Bootstrap</a></p>
+                    <p class="text-white mb-md-1 mb-lg-0">Developed by <br> Theme by <a href="https://getbootstrap.com" class="text-decoration-none fw-bold text-white"
+                        target="__blank">Bootstrap</a></p>
                 </div>
                 <div class="col-lg-4 text-lg-center text-center">
                     <p class="m-0 text-white">Lembaga Akreditasi Rumah Sakit (LARS) <br> © {{ date('Y') }}</p>
