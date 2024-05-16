@@ -89,6 +89,9 @@
                                 <select name="status" id="status"
                                     class="form-control @error('status') is-invalid @enderror" wire:model='status'>
                                     <option value="">Pilih salah satu</option>
+                                    <option value="Diajukan">Diajukan</option>
+                                    <option value="Dalam Peninjauan">Dalam Peninjauan</option>
+                                    <option value="Dalam Penilaian">Dalam Penilaian</option>
                                     <option value="Tidak Terakreditasi">Tidak Terakreditasi</option>
                                     <option value="Terakreditasi">Terakreditasi</option>
                                 </select>
