@@ -1,6 +1,9 @@
-/* Small Mobile Device (576px and below) */
     .logo-lars{
         width: 3em;
+    }
+    .logo-kemkes{
+        width: 10%;
+        height: 10%;
     }
     .container-fluid.navigation{
         padding: 0 10%
@@ -47,7 +50,29 @@
     .cek-permohonan:hover .mdi-magnify{
         color:#fef;
     }
-
     .akreditasi-text{
         color: #980900;
     }
+
+/* Custom Class */
+
+/* XS Devices */
+@media (max-width: 575px) {
+    .navbar-nav{
+        height: 100vh;
+    }
+    .logo-kemkes{
+        width: 40%;
+        height: 40%;
+    }
+}
+
+@media (min-width:576px) and (max-width: 767px) {
+    .navbar-nav{
+        height: 100vh;
+    }
+    .logo-kemkes{
+        width: 30%;
+        height: 30%;
+    }
+}

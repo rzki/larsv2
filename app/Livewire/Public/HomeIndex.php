@@ -13,7 +13,7 @@ class HomeIndex extends Component
     public function render()
     {
         return view('livewire.public.home-index', [
-            'akreditasi' => Accreditation::count()
+            'total_akreditasi' => Accreditation::count()
         ]);
     }
 }
