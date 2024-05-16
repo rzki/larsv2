@@ -1,3 +1,7 @@
+    .required::after{
+        content: " *";
+        color: red;
+    }
     .logo-lars{
         width: 3em;
     }

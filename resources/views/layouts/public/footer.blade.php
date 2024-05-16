@@ -1,6 +1,6 @@
 <footer>
     <div class="container-fluid">
-        <div class="row min-vh-30 p-4 bg-dark">
+        <div class="row min-vh-10 p-4 bg-dark">
             <div class="row py-5 px-lg-5 justify-content-center align-items-center">
                 <div class="col-lg-6 col-md-6 pb-5 py-sm-5 py-lg-0">
                     <h3 class="text-white fw-bold text-uppercase text-sm-center text-lg-start">Lembaga Akreditasi Rumah Sakit</h3>

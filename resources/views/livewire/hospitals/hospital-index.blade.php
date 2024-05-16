@@ -132,7 +132,7 @@
                                         <td>{{ date('d-m-Y', strtotime($hospital->created_at)) }}</td>
                                         <td>{{ $hospital->nama }}</td>
                                         <td>{{ $hospital->no_induk }}</td>
-                                        <td>{{ $hospital->kabupaten->name }}</td>
+                                        <td>{{ optional($hospital->kabupaten)->name ?? null }}</td>
                                         <td>{{ $hospital->kelas }}</td>
                                         @if($hospital->acc_status == 'Pending')
                                             <td><p class="badge rounded-pill bg-danger text-white">{{ $hospital->acc_status }}</p></td>

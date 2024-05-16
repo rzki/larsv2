@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('lokasi');
             $table->date('tgl_mulai');
             $table->date('tgl_selesai');
+            $table->string('surat_permohonan');
             $table->string('status');
             $table->string('hasil');
             $table->timestamps();

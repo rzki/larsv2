@@ -25,13 +25,15 @@ use App\Livewire\Accreditation\AccreditationCreate;
 use App\Livewire\Accreditation\Bab\AccreditationBabShow;
 use App\Livewire\Accreditation\Element\AccreditationElementAddGrade;
 use App\Livewire\Accreditation\Standard\AccreditationStandardShow;
+use App\Livewire\Public\AccreditationRegister;
 use App\Livewire\Public\HomeIndex;
 
 // Route::get('/', function () {
 //     return view('auth.login');
 // });
 
-Route::get('/', HomeIndex::class)->name('home');
+Route::get('/', HomeIndex::class)->name('homepage');
+Route::get('/daftar-akreditasi', AccreditationRegister::class)->name('daftar-akreditasi');
 Route::get('/signin', Login::class)->name('signin');
 Auth::routes();
 

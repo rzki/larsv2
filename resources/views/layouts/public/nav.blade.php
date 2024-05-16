@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-light p-3">
         <div class="container-fluid navigation">
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center" href="{{ route('homepage') }}">
                 <img src="{{ asset('images/logo/logo_lars.png') }}" class="logo-lars" alt="">
                 <span>LARS</span>
             </a>
@@ -13,7 +13,7 @@
             <div class="collapse navbar-collapse d-lg-flex justify-content-lg-center" id="lars-navbar">
                 <ul class="navbar-nav d-flex justify-content-center align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link m-auto mx-2" href="#!">
+                        <a class="nav-link m-auto mx-2" href="{{ route('homepage') }}">
                             <i class="fas fa-plus-circle pe-2"></i>
                             <p>Home</p>
                         </a>

@@ -17,7 +17,7 @@
                 <div class="title mb-30">
                     @if ($hospitals->acc_status == 'Approved')
                         <p class="fs-6 px-3 py-2 text-white bg-success-700 border rounded">Registrasi Rumah Sakit telah di <b>approved</b></p>
-                    @elseif($hospitals->acc_status == 'Pending')
+                    @elseif($hospitals->acc_status == 'Pending' || $hospitals->acc_status == null)
                         <p class="fs-6 px-3 py-2 text-white bg-danger-700 border rounded">Data rumah sakit belum lengkap</p>
                     @endif
                 </div>
@@ -122,19 +122,19 @@
                                     </tr>
                                     <tr>
                                         <td><p>Provinsi</p></td>
-                                        <td><p>{{ $hospitals->provinsi->name }}</p></td>
+                                        <td><p>{{ optional($hospitals->provinsi)->name ?? null }}</p></td>
                                     </tr>
                                     <tr>
                                         <td><p>Kabupaten</p></td>
-                                        <td><p>{{ $hospitals->kabupaten->name }}</p></td>
+                                        <td><p>{{ optional($hospitals->kabupaten)->name ?? null }}</p></td>
                                     </tr>
                                     <tr>
                                         <td><p>Kecamatan</p></td>
-                                        <td><p>{{ $hospitals->kecamatan->name }}</p></td>
+                                        <td><p>{{ optional($hospitals->kecamatan)->name ?? null }}</p></td>
                                     </tr>
                                     <tr>
                                         <td><p>Kelurahan</p></td>
-                                        <td><p>{{ $hospitals->kelurahan->name }}</p></td>
+                                        <td><p>{{ optional($hospitals->kelurahan)->name ?? null }}</p></td>
                                     </tr>
                                     <tr>
                                         <td><p>Kode Pos</p></td>
