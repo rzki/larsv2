@@ -13,6 +13,11 @@
     .hero-text{
         color:whitesmoke;
     }
+    .survey-card-image{
+        width: 100%;
+        height: 176px;
+        object-fit: cover;
+    }
     .required::after{
     content: " *";
     color: red;
@@ -42,6 +47,13 @@
     .daftar-akreditasi,.cek-permohonan{
     padding-bottom: 4em;
     text-align: center;
+    }
+    #register{
+        background:linear-gradient(0deg, rgba(231, 78, 61, 0.85), rgba(231, 78, 61, 0.85)), url('../images/bg-permohonan-akreditasi.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     /* Custom Class */

@@ -1,0 +1,34 @@
+/* Backgound Colors */
+.bg-light-grey{
+    background-color: #f0f0f0 !important;
+}
+.bg-dark-grey{
+    background-color: gray !important;
+}
+.bg-light-red{
+    background-color: #E74D3D !important;
+}
+.bg-whiteish{
+    background-color: #e5e5e5 !important;
+}
+.bg-blackish{
+    background-color:#151515 !important;
+}
+
+/* Text Colors */
+
+.text-light-grey{
+    color: #f8f8f8 !important;
+}
+.text-dark-grey{
+    color: gray !important;
+}
+.text-light-red{
+    color: #E74D3D !important;
+}
+.text-whiteish{
+    color: #e5e5e5 !important;
+}
+.text-blackish{
+    color:#151515 !important;
+}
