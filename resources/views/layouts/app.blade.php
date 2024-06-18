@@ -58,10 +58,12 @@
                                     <a href="{{ route('profile.show') }}"> <i class="lni lni-user"></i> {{ __('My profile') }}</a>
                                 </li>
                                 <li>
-                                    <form method="POST" action="{{ route('logout') }}">
-                                    @csrf
-                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();"> <i class="lni lni-exit"></i> {{ __('Logout') }}</a>
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                                    <form method="POST" action="{{ route('logout') }}" id="logout-form">
                                     </form>
+                                    <i class="lni lni-exit"></i> {{ __('Logout') }}
+                                    </a>
                                 </li>
                             </ul>
                         </div>

@@ -96,11 +96,17 @@
                                 @foreach ($accreditations as $acc)
                                     <tr class="text-center">
                                         <td>{{ date('d-m-Y', strtotime($acc->created_at)) }}</td>
-                                        <td>{{ $acc->hospitals->nama }}</td>
-                                        <td>{{ $acc->deskripsi }}</td>
-                                        <td>{{ $acc->no_akreditasi }}</td>
-                                        <td>{{ $acc->lokasi }}</td>
-                                        <td>{{ date('d-m-Y', strtotime($acc->tgl_mulai)) }} - {{ date('d-m-Y', strtotime($acc->tgl_selesai)) }}</td>
+                                        <td>{{ $acc->hospitals->nama == null ? '-' : $acc->hospitals->nama  }}</td>
+                                        <td>{{ $acc->deskripsi == null ? '-' :$acc->deskripsi  }}</td>
+                                        <td>{{ $acc->no_akreditasi == null ? '-' :$acc->no_akreditasi  }}</td>
+                                        <td>{{ $acc->lokasi == null ? '-' :$acc->lokasi  }}</td>
+                                        <td>
+                                            @if ($acc->tgl_mulai == null || $acc->tgl_selesai == null || $acc->tgl_mulai == null && $acc->tgl_selesai == null)
+                                            <td>{{ __('-') }}</td>
+                                            @else
+                                                {{ date('d-m-Y', strtotime($acc->tgl_mulai)) }} - {{ date('d-m-Y', strtotime($acc->tgl_selesai)) }}
+                                            @endif
+                                        </td>
                                         @if($acc->status == 'Tidak Terakreditasi')
                                         <td>
                                             <p class="badge rounded-pill bg-danger text-white">{{ $acc->status }}</p>
@@ -108,6 +114,10 @@
                                         @elseif($acc->status == 'Terakreditasi')
                                         <td>
                                             <p class="badge rounded-pill bg-success text-white">{{ $acc->status }}</p>
+                                        </td>
+                                        @else
+                                        <td>
+                                            <p class="badge rounded-pill bg-dark text-white">{{ $acc->status }}</p>
                                         </td>
                                         @endif
                                         <td>

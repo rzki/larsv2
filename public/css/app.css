@@ -1,82 +1,111 @@
-    .required::after{
-        content: " *";
-        color: red;
+    .hero-lars{
+        background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-lars.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
-    .logo-lars{
-        width: 3em;
+    .inter{
+        font-family: Inter;
+    }
+    .text-justify{
+        text-align: justify;
+    }
+    .hero-text{
+        color:whitesmoke;
+    }
+    .required::after{
+    content: " *";
+    color: red;
+    }
+    .navbar-logo{
+    width: 10%;
+    }
+    .navbar-logo-img{
+    width: 50%;
     }
     .logo-kemkes{
-        width: 10%;
-        height: 10%;
+    width: 10%;
+    height: 10%;
     }
     .container-fluid.navigation{
-        padding: 0 10%
+    padding: 0 10%
     }
     .main{
-        margin-top: 102px;
+    margin-top: 77px;
     }
     .min-vh-50{
-        min-height: 50vh;
+    min-height: 50vh;
     }
     .icon{
-        font-size: 6em;
+    font-size: 6em;
     }
     .daftar-akreditasi,.cek-permohonan{
-        padding-bottom: 4em;
-        text-align: center;
-    }
-    /* Daftar Akreditasi */
-    .daftar-akreditasi:hover{
-        background-color: #980900;
-        color:#fef;
-        transition: 0.25s;
-        border-radius: 5px;
-    }
-    .mdi-file-document{
-        color: #980900;
-    }
-    .daftar-akreditasi:hover .mdi-file-document{
-        color:#fef;
-    }
-    /* Cek Permohonan */
-    .cek-permohonan:hover{
-        background-color: #E51900;
-        color:#fef;
-        transition: 0.25s;
-        border-radius: 5px;
-    }
-    .cek-permohonan:hover h3.card-title{
-        color:#fef;
-    }
-    .mdi-magnify{
-        color:#E51900;
-    }
-    .cek-permohonan:hover .mdi-magnify{
-        color:#fef;
-    }
-    .akreditasi-text{
-        color: #980900;
+    padding-bottom: 4em;
+    text-align: center;
     }
 
-/* Custom Class */
+    /* Custom Class */
 
-/* XS Devices */
-@media (max-width: 575px) {
+    /* XS Devices */
+    @media (max-width: 575px) {
     .navbar-nav{
-        height: 100vh;
+    height: 100vh;
     }
     .logo-kemkes{
-        width: 40%;
-        height: 40%;
+    width: 40%;
+    height: 40%;
     }
-}
+    .navbar-logo{
+    width: 25%;
+    }
+    .navbar-logo-img{
+    width: 100%;
+    }
+    }
 
-@media (min-width:576px) and (max-width: 767px) {
+    /* SM Devices */
+    @media (min-width:576px) and (max-width: 767px) {
     .navbar-nav{
-        height: 100vh;
+    height: 100vh;
     }
     .logo-kemkes{
-        width: 30%;
-        height: 30%;
+    width: 30%;
+    height: 30%;
     }
-}
+    .navbar-logo{
+    width: 25%;
+    }
+    .navbar-logo-img{
+    width: 100%;
+    }
+    }
+
+    /* MD Devices */
+    @media (min-width:768px){
+    .navbar-logo{
+    width: 25%;
+    }
+    .navbar-logo-img{
+    width: 100%;
+    }
+    }
+
+    /* LG Devices */
+    @media (min-width:992px){
+    .navbar-logo{
+    width: 25%;
+    }
+    .navbar-logo-img{
+    width: 75%;
+    }
+    }
+
+    /* Desktop */
+    @media (min-width:1199px){
+    .navbar-logo{
+    width: 10%;
+    }
+    .navbar-logo-img{
+    width: 75%;
+    }
+    }

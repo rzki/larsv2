@@ -51,8 +51,19 @@ class HospitalIndex extends Component
             ->when($this->filterStatus !== '', function($query){
                 $query->where('acc_status', $this->filterStatus);
             })
-            ->orderBy($this->sortBy,$this->sortDir)
+            ->orderBy($this->sortBy, $this->sortDir)
             ->paginate($this->perPage)
         ]);
+        // $hospitals = Hospital::search($this->search)
+        //     ->when($this->filterKelas !== '', function($query){
+        //         $query->where('kelas', $this->filterKelas);
+        //     })
+        //     ->when($this->filterStatus !== '', function($query){
+        //         $query->where('acc_status', $this->filterStatus);
+        //     })
+        //     ->orderBy($this->sortBy, $this->sortDir)
+        //     ->paginate($this->perPage);
+        // dd($hospitals);
+        //     return view('livewire.hospitals.hospital-index',compact('hospitals'));
     }
 }

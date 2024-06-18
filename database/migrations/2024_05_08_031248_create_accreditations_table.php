@@ -14,15 +14,15 @@ return new class extends Migration
         Schema::create('accreditations', function (Blueprint $table) {
             $table->id();
             $table->uuid('acc_id');
-            $table->foreignId('hospital_id')->constrained('hospitals', 'id', 'hospital_id')->cascadeOnUpdate()->cascadeOnDelete();
-            $table->string('deskripsi');
-            $table->string('no_akreditasi');
-            $table->string('lokasi');
-            $table->date('tgl_mulai');
-            $table->date('tgl_selesai');
-            $table->string('surat_permohonan');
-            $table->string('status');
-            $table->string('hasil');
+            $table->foreignId('hospital_id')->nullable()->constrained('hospitals', 'id', 'hospital_id')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->string('deskripsi')->nullable();
+            $table->string('no_akreditasi')->nullable();
+            $table->string('lokasi')->nullable();
+            $table->date('tgl_mulai')->nullable();
+            $table->date('tgl_selesai')->nullable();
+            $table->string('surat_permohonan')->nullable();
+            $table->string('status')->nullable();
+            $table->string('hasil')->nullable();
             $table->timestamps();
         });
 

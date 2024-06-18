@@ -1,4 +1,31 @@
 <div>
+    {{-- Hero --}}
+    <div class="row hero-lars min-vh-50 py-5 px-5">
+        <div class="col d-flex flex-column justify-content-center align-items-center">
+            <h2 class="fs-5 hero-text inter text-uppercase">{{ __('Selamat Datang di LARS') }}</h2>
+            <br>
+            <h1 class="hero-text inter text-uppercase">Lembaga Akreditasi Rumah Sakit</h1>
+        </div>
+    </div>
+    {{-- Tentang Kami --}}
+    <div class="container py-5">
+        <div class="row min-vh-50 py-5 px-5">
+            <div class="col-lg-6">
+                <h2 class="fs-5 hero-text inter text-uppercase text-danger">{{ __('Tentang Kami') }}</h2>
+                <p class="inter text-justify"><b>Lembaga Akreditasi Rumah Sakit (LARS)</b> {{ __('adalah lembaga profesional, independen dan nirlaba yang berbasis sistem interkoneksi digital dan komunitas, yang
+                mendapat mandat Kementerian Kesehatan Republik Indonesia sebagai Lembaga Independen Penyelenggara Akreditasi Rumah Sakit
+                di Indonesia melalui Keputusan Menteri Kesehatan Republik Indonesia
+                Nomor HK. 01.07/MENKES/6604/2021 tentang Lembaga Independen Penyelenggara Akreditasi Rumah Sakit. LARS dalam hubungan
+                internasional diperkenalkan dengan nama: “Indonesian Hospital Accreditation Bodies” yang dapat disingkat menjadi "IHAB".') }}</p>
+                <div class="d-grid">
+                    <a href="#" class="btn btn-primary inter">{{ __('Selengkapnya') }} <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{{ asset('images/3.jpeg') }}" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
     {{-- Permohonan Akreditasi Rumah Sakit --}}
     <div class="row min-vh-50 py-5 px-5">
         <h2 class="text-uppercase fw-bold text-center pt-4 pb-5">Permohonan Akreditasi Rumah Sakit</h2>
@@ -8,7 +35,7 @@
                     <a href="{{ route('daftar-akreditasi') }}" class="text-decoration-none text-black">
                         <div class="card mb-4 mb-sm-4 mb-lg-0">
                             <div class="card-body daftar-akreditasi">
-                                <i class="icon mdi mdi-file-document"></i>
+                                <i class="icon fas fa-file py-5"></i>
                                 <h3 class="card-title">Daftar Akreditasi</h3>
                             </div>
                         </div>
@@ -19,7 +46,7 @@
                 <a href="#" class="text-decoration-none">
                     <div class="card">
                         <div class="card-body cek-permohonan">
-                            <i class="icon mdi mdi-magnify"></i>
+                            <i class="icon fas fa-magnifying-glass py-5"></i>
                             <h3 class="card-title">Cek Permohonan</h3>
                         </div>
                     </div>
